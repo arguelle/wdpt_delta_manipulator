@@ -16,7 +16,7 @@ sudo usermod -aG dialout $USER
 ```bash
 mkdir -p manip_ws/src
 cd manip_ws/src
-git clone https://github.com/arguelle/wdpt_delta_manipulator.git
+git clone https://github.com/arguelle/wdpt_delta_manipulator.git --recursive
 ```
 
 ## Install ds4drv to enable wireless use of PS4 controller
