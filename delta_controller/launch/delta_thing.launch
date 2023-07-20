@@ -1,0 +1,21 @@
+<launch>
+  <arg name="robot_name"   default="open_manipulator_controller"/>
+  <arg name="end_effector" default="tool"/>
+
+  <node name="joy_node" pkg="joy" type="joy_node">
+    <remap from="joy" to="$(arg robot_name)/joy"/>
+  </node>
+
+  <group ns="$(arg robot_name)">
+    <node name="teleop_joystick" pkg="open_manipulator_teleop" type="open_manipulator_teleop_joystick" output="screen">
+      <remap from="kinematics_pose" to="$(arg end_effector)/kinematics_pose"/>
+      <param name="end_effector_name" value="$(arg end_effector)"/>
+    </node>
+  </group>
+
+  <node name="joystick" pkg="joy" type="joy_node">
+    <remap from="joy" to="$(arg end_effector)/joy"/>
+  </node>
+
+  <node name="open_manipulator_controller" pkg="delta_controller" type="delta_controller" args="/dev/ttyUSB0 1000000"/>
+</launch>

@@ -1,16 +1,28 @@
-# Delta manipulator installation guide
+# Delta manipulator control for WDPT drone
+
+## Install dependencies
+Ros must already be installed on the system.
+The user must be added to the "dialout" group.
 
 ```bash
 sudo apt install ros-noetic-dynamixel-sdk ros-noetic-dynamixel-workbench*
 sudo apt install ros-noetic-robotis-manipulator
+sudo apt install ros-noetic-moveit
+sudo usermod -aG dialout $USER
 ```
 
-create a catkin workspace
+## Create a catkin workspace and clone with repository into src
+
 ```bash
 mkdir -p manip_ws/src
 cd manip_ws/src
+git clone 
+```
 
-git clone -b 2.0.1 https://github.com/ROBOTIS-GIT/open_manipulator.git
-git clone -b 1.0.1 https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
-git clone https://github.com/ROBOTIS-GIT/open_manipulator_dependencies.git
+## Install ds4drv to enable wireless use of PS4 controller
+This step is not required if testing with a wired controller.
+
+```bash
+sudo apt install python3-pip
+sudo pip install ds4drv
 ```
