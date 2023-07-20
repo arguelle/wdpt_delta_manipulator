@@ -7,3 +7,6 @@
 [submodule "joystick_drivers"]
 	path = joystick_drivers
 	url = https://github.com/ros-drivers/joystick_drivers
+[submodule "open_manipulator"]
+	path = open_manipulator
+	url = https://github.com/ROBOTIS-GIT/open_manipulator.git
