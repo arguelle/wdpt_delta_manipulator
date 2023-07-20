@@ -26,3 +26,10 @@ This step is not required if testing with a wired controller.
 sudo apt install python3-pip
 sudo pip install ds4drv
 ```
+
+## Test with PS4 controller and U2D2
+
+```bash
+roslaunch delta_controller delta_thing.launch
+```
+
